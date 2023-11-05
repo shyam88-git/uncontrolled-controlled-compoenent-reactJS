@@ -1,14 +1,23 @@
-import React from 'react';
-import Form5 from './component/Form5';
-import './App.css';
+import React, { useState } from 'react';
 
-function App() {
+const App = () => {
+  const [password, setPassword] = useState('');
+
+  const handlePassword = (event) => {
+    setPassword(event.target.value);
+  };
+
   return (
-    <div className="App">
-      <Form5/>
-      
-    </div>
+    <React.Fragment>
+      <pre>Hello {password}</pre>
+      <input
+        type="password"
+        value={password}
+        name="pass"
+        onChange={handlePassword}
+      />
+    </React.Fragment>
   );
-}
+};
 
 export default App;
